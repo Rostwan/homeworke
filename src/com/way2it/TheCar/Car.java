@@ -4,17 +4,26 @@ public class Car {
     private int height;
     private String type;
     private int width;
-    body body1 = new body();
 
-    steering_wheel steering_wheel1 = new steering_wheel();
-    wheel wheel1 = new wheel();
+    private Body body;
+    private SteeringWheel steering_wheel;
+    private Wheel wheel;
 
-
-    public void newHeight(){
-        height *= 0.2;
+    public Car(int height, String type, int width, Body body, SteeringWheel steering_wheel, Wheel wheel) {
+        this.height = height;
+        this.type = type;
+        this.width = width;
+        this.body = body;
+        this.steering_wheel = steering_wheel;
+        this.wheel = wheel;
     }
-    public void newWidth(){
-        width *= 0.12;
+
+    public void increaseHeightBy(double multiplier) {
+        height *= multiplier;
+    }
+
+    public void increaseWidthBy(double multiplier) {
+        width *= multiplier;
     }
 
     @Override
@@ -23,9 +32,9 @@ public class Car {
                 "height=" + height +
                 ", type='" + type + '\'' +
                 ", width=" + width +
-                ", body1=" + body1 +
-                ", steering_wheel1=" + steering_wheel1 +
-                ", wheel1=" + wheel1 +
+                ", body=" + body +
+                ", steeringWheel=" + steering_wheel +
+                ", wheel=" + wheel +
                 '}';
     }
 
@@ -53,27 +62,28 @@ public class Car {
         this.width = width;
     }
 
-    public body getBody1() {
-        return body1;
+    public Body getBody() {
+        return body;
     }
 
-    public void setBody1(body body1) {
-        this.body1 = body1;
+    public void setBody(Body body) {
+        this.body = body;
     }
 
-    public steering_wheel getSteering_wheel1() {
-        return steering_wheel1;
+    public SteeringWheel getSteering_wheel() {
+        return steering_wheel;
     }
 
-    public void setSteering_wheel1(steering_wheel steering_wheel1) {
-        this.steering_wheel1 = steering_wheel1;
+    public void setSteering_wheel(SteeringWheel steering_wheel) {
+        this.steering_wheel = steering_wheel;
     }
 
-    public wheel getWheel1() {
-        return wheel1;
+    public Wheel getWheel() {
+        return wheel;
     }
 
-    public void setWheel1(wheel wheel1) {
-        this.wheel1 = wheel1;
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
     }
 }
+
